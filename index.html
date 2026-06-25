@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -8,7 +9,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,600&display=swap"
+    rel="stylesheet" />
 
   <!-- Animation Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -17,17 +20,23 @@
 
   <style>
     /* ── Reset & tokens ─────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
-      --gold:    #f5c842;
-      --gold2:   #fde68a;
-      --purple:  #6b21a8;
-      --rose:    #fb7185;
-      --pink:    #f9a8d4;
-      --violet:  #c084fc;
-      --cream:   #fff9f0;
-      --dark:    #0d0618;
+      --gold: #f5c842;
+      --gold2: #fde68a;
+      --purple: #6b21a8;
+      --rose: #fb7185;
+      --pink: #f9a8d4;
+      --violet: #c084fc;
+      --cream: #fff9f0;
+      --dark: #0d0618;
 
       --card-pad-x: clamp(20px, 6vw, 56px);
       --card-pad-y: clamp(28px, 5vw, 48px);
@@ -64,22 +73,23 @@
       inset: -40% -20% auto;
       width: 140%;
       height: 80%;
-      background: conic-gradient(
-        from 200deg at 50% 50%,
-        transparent 0deg,
-        rgba(107,33,168,.15) 40deg,
-        rgba(168,85,247,.10) 90deg,
-        transparent 130deg,
-        rgba(245,200,66,.07) 200deg,
-        transparent 260deg
-      );
+      background: conic-gradient(from 200deg at 50% 50%,
+          transparent 0deg,
+          rgba(107, 33, 168, .15) 40deg,
+          rgba(168, 85, 247, .10) 90deg,
+          transparent 130deg,
+          rgba(245, 200, 66, .07) 200deg,
+          transparent 260deg);
       filter: blur(70px);
       animation: auroraRotate 24s linear infinite;
       z-index: 0;
       pointer-events: none;
     }
+
     @keyframes auroraRotate {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .orb {
@@ -89,28 +99,52 @@
       z-index: 0;
       filter: blur(90px);
     }
+
     .orb-1 {
-      width: min(600px, 90vw); height: min(600px, 90vw);
-      background: radial-gradient(circle, rgba(107,33,168,.38) 0%, transparent 70%);
-      top: -20%; left: -15%;
+      width: min(600px, 90vw);
+      height: min(600px, 90vw);
+      background: radial-gradient(circle, rgba(107, 33, 168, .38) 0%, transparent 70%);
+      top: -20%;
+      left: -15%;
       animation: orbA 20s ease-in-out infinite alternate;
     }
+
     .orb-2 {
-      width: min(500px, 80vw); height: min(500px, 80vw);
-      background: radial-gradient(circle, rgba(245,200,66,.16) 0%, transparent 70%);
-      bottom: -15%; right: -15%;
+      width: min(500px, 80vw);
+      height: min(500px, 80vw);
+      background: radial-gradient(circle, rgba(245, 200, 66, .16) 0%, transparent 70%);
+      bottom: -15%;
+      right: -15%;
       animation: orbB 25s ease-in-out infinite alternate;
     }
+
     .orb-3 {
-      width: min(360px, 70vw); height: min(360px, 70vw);
-      background: radial-gradient(circle, rgba(251,113,133,.16) 0%, transparent 70%);
-      top: 45%; left: 50%;
-      transform: translate(-50%,-50%);
+      width: min(360px, 70vw);
+      height: min(360px, 70vw);
+      background: radial-gradient(circle, rgba(251, 113, 133, .16) 0%, transparent 70%);
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       animation: orbC 17s ease-in-out infinite alternate;
     }
-    @keyframes orbA { to { transform: translate(10vw, 8vh);  } }
-    @keyframes orbB { to { transform: translate(-8vw,-6vh);  } }
-    @keyframes orbC { to { transform: translate(-50%,-50%) scale(1.45); } }
+
+    @keyframes orbA {
+      to {
+        transform: translate(10vw, 8vh);
+      }
+    }
+
+    @keyframes orbB {
+      to {
+        transform: translate(-8vw, -6vh);
+      }
+    }
+
+    @keyframes orbC {
+      to {
+        transform: translate(-50%, -50%) scale(1.45);
+      }
+    }
 
     /* ── Twinkle static stars ────────────────────── */
     .t-star {
@@ -121,18 +155,28 @@
       z-index: 1;
       animation: twinkle ease-in-out infinite alternate;
     }
+
     @keyframes twinkle {
-      from { opacity: .1; transform: scale(.6); }
-      to   { opacity: 1;  transform: scale(1.4);
-             box-shadow: 0 0 6px 2px rgba(253,230,138,.75); }
+      from {
+        opacity: .1;
+        transform: scale(.6);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.4);
+        box-shadow: 0 0 6px 2px rgba(253, 230, 138, .75);
+      }
     }
 
     /* ── Shooting star ───────────────────────────── */
     .shoot {
       position: fixed;
-      top: 0; left: 0;
-      width: 2px; height: 70px;
-      background: linear-gradient(180deg, transparent 0%, #fff 50%, rgba(253,230,138,.7) 100%);
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 70px;
+      background: linear-gradient(180deg, transparent 0%, #fff 50%, rgba(253, 230, 138, .7) 100%);
       border-radius: 999px;
       pointer-events: none;
       z-index: 1;
@@ -157,17 +201,25 @@
       justify-content: center;
       margin-bottom: -6px;
     }
+
     .crown-svg {
       width: clamp(120px, 35vw, 200px);
       filter:
-        drop-shadow(0 0 24px rgba(245,200,66,.9))
-        drop-shadow(0 0 60px rgba(245,200,66,.45));
+        drop-shadow(0 0 24px rgba(245, 200, 66, .9)) drop-shadow(0 0 60px rgba(245, 200, 66, .45));
       animation: crownFloat 3.6s ease-in-out infinite;
       will-change: transform;
     }
+
     @keyframes crownFloat {
-      0%,100% { transform: translateY(0)    rotate(-2deg); }
-      50%      { transform: translateY(-14px) rotate(2deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-2deg);
+      }
+
+      50% {
+        transform: translateY(-14px) rotate(2deg);
+      }
     }
 
     /* ── Hair ribbon ─────────────────────────────── */
@@ -175,6 +227,7 @@
       width: 100%;
       max-width: 640px;
     }
+
     .hair-ribbon svg {
       width: 100%;
       height: auto;
@@ -184,25 +237,24 @@
     /* ── Card ────────────────────────────────────── */
     .card {
       width: 100%;
-      background: linear-gradient(
-        135deg,
-        rgba(107,33,168,.32) 0%,
-        rgba(13,6,24,.55) 55%,
-        rgba(107,33,168,.28) 100%
-      );
-      border: 1px solid rgba(245,200,66,.32);
+      background: linear-gradient(135deg,
+          rgba(107, 33, 168, .32) 0%,
+          rgba(13, 6, 24, .55) 55%,
+          rgba(107, 33, 168, .28) 100%);
+      border: 1px solid rgba(245, 200, 66, .32);
       border-radius: clamp(16px, 4vw, 28px);
       padding: var(--card-pad-y) var(--card-pad-x);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       box-shadow:
-        0 0 60px rgba(107,33,168,.35),
-        inset 0 1px 0 rgba(255,255,255,.09);
+        0 0 60px rgba(107, 33, 168, .35),
+        inset 0 1px 0 rgba(255, 255, 255, .09);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: clamp(18px, 4vw, 32px);
-      opacity: 0;            /* GSAP reveals this */
+      opacity: 0;
+      /* GSAP reveals this */
     }
 
     /* ── Title ───────────────────────────────────── */
@@ -233,7 +285,7 @@
       font-size: clamp(1.05rem, 3.2vw, 1.5rem);
       font-style: italic;
       line-height: 1.95;
-      color: rgba(253,230,138,.92);
+      color: rgba(253, 230, 138, .92);
       text-align: center;
       letter-spacing: .015em;
     }
@@ -247,19 +299,47 @@
     }
 
     .flower-svg {
-      width:  clamp(42px, 10vw, 60px);
+      width: clamp(42px, 10vw, 60px);
       height: clamp(42px, 10vw, 60px);
       animation: flowerSway ease-in-out infinite;
       flex-shrink: 0;
     }
-    .flower-svg:nth-child(1) { animation-duration:3.0s; animation-delay:0.0s; }
-    .flower-svg:nth-child(2) { animation-duration:2.6s; animation-delay:0.4s; }
-    .flower-svg:nth-child(3) { animation-duration:3.3s; animation-delay:0.8s; }
-    .flower-svg:nth-child(4) { animation-duration:2.8s; animation-delay:0.2s; }
-    .flower-svg:nth-child(5) { animation-duration:3.1s; animation-delay:0.6s; }
+
+    .flower-svg:nth-child(1) {
+      animation-duration: 3.0s;
+      animation-delay: 0.0s;
+    }
+
+    .flower-svg:nth-child(2) {
+      animation-duration: 2.6s;
+      animation-delay: 0.4s;
+    }
+
+    .flower-svg:nth-child(3) {
+      animation-duration: 3.3s;
+      animation-delay: 0.8s;
+    }
+
+    .flower-svg:nth-child(4) {
+      animation-duration: 2.8s;
+      animation-delay: 0.2s;
+    }
+
+    .flower-svg:nth-child(5) {
+      animation-duration: 3.1s;
+      animation-delay: 0.6s;
+    }
+
     @keyframes flowerSway {
-      0%,100% { transform: rotate(-11deg) scale(1);    }
-      50%      { transform: rotate(11deg)  scale(1.12); }
+
+      0%,
+      100% {
+        transform: rotate(-11deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(11deg) scale(1.12);
+      }
     }
 
     /* ── Signature ───────────────────────────────── */
@@ -267,10 +347,11 @@
       font-family: 'Cinzel Decorative', serif;
       font-size: clamp(.7rem, 2.5vw, 1rem);
       letter-spacing: .28em;
-      color: rgba(245,200,66,.6);
+      color: rgba(245, 200, 66, .6);
       text-transform: uppercase;
       text-align: center;
-      opacity: 0;            /* GSAP reveals */
+      opacity: 0;
+      /* GSAP reveals */
     }
 
     /* ── Floating petals (JS generated) ─────────── */
@@ -291,23 +372,32 @@
 
     /* ── Mobile refinements ──────────────────────── */
     @media (max-width: 480px) {
-      .card { border-radius: 18px; }
-      .card-message { line-height: 1.85; }
+      .card {
+        border-radius: 18px;
+      }
+
+      .card-message {
+        line-height: 1.85;
+      }
     }
 
     /* ── Reduce motion ───────────────────────────── */
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
+
+      *,
+      *::before,
+      *::after {
         animation-duration: .01ms !important;
         transition-duration: .01ms !important;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ── Ambient background ─────────────────── -->
-  <div class="aurora"  aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true"></div>
   <div class="orb orb-1" aria-hidden="true"></div>
   <div class="orb orb-2" aria-hidden="true"></div>
   <div class="orb orb-3" aria-hidden="true"></div>
@@ -321,37 +411,40 @@
       <svg class="crown-svg" viewBox="0 0 220 130" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="gBand" x1="10" y1="85" x2="210" y2="115" gradientUnits="userSpaceOnUse">
-            <stop offset="0%"   stop-color="#b7791f"/>
-            <stop offset="40%"  stop-color="#f5c842"/>
-            <stop offset="70%"  stop-color="#fde68a"/>
-            <stop offset="100%" stop-color="#b7791f"/>
+            <stop offset="0%" stop-color="#b7791f" />
+            <stop offset="40%" stop-color="#f5c842" />
+            <stop offset="70%" stop-color="#fde68a" />
+            <stop offset="100%" stop-color="#b7791f" />
           </linearGradient>
           <linearGradient id="gSpike" x1="110" y1="5" x2="110" y2="85" gradientUnits="userSpaceOnUse">
-            <stop offset="0%"   stop-color="#fde68a"/>
-            <stop offset="60%"  stop-color="#f5c842"/>
-            <stop offset="100%" stop-color="#b7791f"/>
+            <stop offset="0%" stop-color="#fde68a" />
+            <stop offset="60%" stop-color="#f5c842" />
+            <stop offset="100%" stop-color="#b7791f" />
           </linearGradient>
           <filter id="fJewel" x="-80%" y="-80%" width="260%" height="260%">
-            <feGaussianBlur stdDeviation="3" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            <feGaussianBlur stdDeviation="3" result="b" />
+            <feMerge>
+              <feMergeNode in="b" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
           </filter>
         </defs>
         <!-- Spikes -->
-        <polygon points="10,85 40,20 70,85"   fill="url(#gSpike)"/>
-        <polygon points="60,85 110,5 160,85"  fill="url(#gSpike)"/>
-        <polygon points="150,85 180,20 210,85" fill="url(#gSpike)"/>
+        <polygon points="10,85 40,20 70,85" fill="url(#gSpike)" />
+        <polygon points="60,85 110,5 160,85" fill="url(#gSpike)" />
+        <polygon points="150,85 180,20 210,85" fill="url(#gSpike)" />
         <!-- Base band -->
-        <rect x="10" y="85" width="200" height="30" rx="6" fill="url(#gBand)"/>
+        <rect x="10" y="85" width="200" height="30" rx="6" fill="url(#gBand)" />
         <!-- Tip jewels -->
-        <circle cx="110" cy="14" r="9"  fill="#fb7185" filter="url(#fJewel)"/>
-        <circle cx="40"  cy="26" r="6"  fill="#a855f7" filter="url(#fJewel)"/>
-        <circle cx="180" cy="26" r="6"  fill="#38bdf8" filter="url(#fJewel)"/>
+        <circle cx="110" cy="14" r="9" fill="#fb7185" filter="url(#fJewel)" />
+        <circle cx="40" cy="26" r="6" fill="#a855f7" filter="url(#fJewel)" />
+        <circle cx="180" cy="26" r="6" fill="#38bdf8" filter="url(#fJewel)" />
         <!-- Band jewels -->
-        <circle cx="60"  cy="100" r="7" fill="#fbbf24" filter="url(#fJewel)"/>
-        <circle cx="110" cy="100" r="8" fill="#fb7185" filter="url(#fJewel)"/>
-        <circle cx="160" cy="100" r="7" fill="#a855f7" filter="url(#fJewel)"/>
-        <circle cx="30"  cy="100" r="4" fill="#fde68a"/>
-        <circle cx="190" cy="100" r="4" fill="#fde68a"/>
+        <circle cx="60" cy="100" r="7" fill="#fbbf24" filter="url(#fJewel)" />
+        <circle cx="110" cy="100" r="8" fill="#fb7185" filter="url(#fJewel)" />
+        <circle cx="160" cy="100" r="7" fill="#a855f7" filter="url(#fJewel)" />
+        <circle cx="30" cy="100" r="4" fill="#fde68a" />
+        <circle cx="190" cy="100" r="4" fill="#fde68a" />
       </svg>
     </div>
 
@@ -360,26 +453,26 @@
       <svg viewBox="0 0 700 90" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="gHair" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%"   stop-color="#b45309" stop-opacity="0"/>
-            <stop offset="15%"  stop-color="#d97706"/>
-            <stop offset="50%"  stop-color="#fbbf24"/>
-            <stop offset="85%"  stop-color="#d97706"/>
-            <stop offset="100%" stop-color="#b45309" stop-opacity="0"/>
+            <stop offset="0%" stop-color="#b45309" stop-opacity="0" />
+            <stop offset="15%" stop-color="#d97706" />
+            <stop offset="50%" stop-color="#fbbf24" />
+            <stop offset="85%" stop-color="#d97706" />
+            <stop offset="100%" stop-color="#b45309" stop-opacity="0" />
           </linearGradient>
         </defs>
-        <path id="hp1" d="M0,52 C80,22 160,82 240,52 C320,22 400,82 480,52 C560,22 640,82 700,52"
-              stroke="url(#gHair)" stroke-width="5"   fill="none" opacity=".9"/>
-        <path id="hp2" d="M0,64 C80,34 160,94 240,64 C320,34 400,94 480,64 C560,34 640,94 700,64"
-              stroke="url(#gHair)" stroke-width="3.5" fill="none" opacity=".65"/>
-        <path id="hp3" d="M0,40 C80,10 160,70 240,40 C320,10 400,70 480,40 C560,10 640,70 700,40"
-              stroke="url(#gHair)" stroke-width="2.5" fill="none" opacity=".45"/>
+        <path id="hp1" d="M0,52 C80,22 160,82 240,52 C320,22 400,82 480,52 C560,22 640,82 700,52" stroke="url(#gHair)"
+          stroke-width="5" fill="none" opacity=".9" />
+        <path id="hp2" d="M0,64 C80,34 160,94 240,64 C320,34 400,94 480,64 C560,34 640,94 700,64" stroke="url(#gHair)"
+          stroke-width="3.5" fill="none" opacity=".65" />
+        <path id="hp3" d="M0,40 C80,10 160,70 240,40 C320,10 400,70 480,40 C560,10 640,70 700,40" stroke="url(#gHair)"
+          stroke-width="2.5" fill="none" opacity=".45" />
         <!-- Accent flowers on hair -->
-        <circle cx="120" cy="44" r="6"   fill="#fb7185" opacity=".9"/>
-        <circle cx="120" cy="44" r="2.5" fill="#fff"/>
-        <circle cx="350" cy="20" r="7"   fill="#f472b6" opacity=".9"/>
-        <circle cx="350" cy="20" r="3"   fill="#fff"/>
-        <circle cx="580" cy="44" r="6"   fill="#c084fc" opacity=".9"/>
-        <circle cx="580" cy="44" r="2.5" fill="#fff"/>
+        <circle cx="120" cy="44" r="6" fill="#fb7185" opacity=".9" />
+        <circle cx="120" cy="44" r="2.5" fill="#fff" />
+        <circle cx="350" cy="20" r="7" fill="#f472b6" opacity=".9" />
+        <circle cx="350" cy="20" r="3" fill="#fff" />
+        <circle cx="580" cy="44" r="6" fill="#c084fc" opacity=".9" />
+        <circle cx="580" cy="44" r="2.5" fill="#fff" />
       </svg>
     </div>
 
@@ -391,6 +484,7 @@
       <div class="divider" id="divider"></div>
 
       <p class="card-message" id="cardMsg">
+        Hol princesa hermosa, <br>
         Se que aun no eres mi novia,<br>
         pero hoy tomo este dia para hacer algo especial.<br><br>
         Hoy te coloco una corona en la cabeza<br>
@@ -405,68 +499,68 @@
         <!-- Rose pink -->
         <svg class="flower-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(30,30)">
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(0)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(60)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(120)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(180)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(240)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(300)"/>
-            <circle cx="0" cy="0" r="8" fill="#fde68a"/>
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(0)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(60)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(120)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(180)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(240)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#fb7185" transform="rotate(300)" />
+            <circle cx="0" cy="0" r="8" fill="#fde68a" />
           </g>
         </svg>
 
         <!-- Violet -->
         <svg class="flower-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(30,30)">
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(0)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(45)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(90)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(135)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(180)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(225)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(270)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(315)"/>
-            <circle cx="0" cy="0" r="8" fill="#f5c842"/>
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(0)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(45)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(90)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(135)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(180)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(225)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(270)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#c084fc" transform="rotate(315)" />
+            <circle cx="0" cy="0" r="8" fill="#f5c842" />
           </g>
         </svg>
 
         <!-- Soft pink (center) -->
         <svg class="flower-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(30,30)">
-            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#f9a8d4" transform="rotate(0)"/>
-            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#f9a8d4" transform="rotate(72)"/>
-            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#f9a8d4" transform="rotate(144)"/>
-            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#f9a8d4" transform="rotate(216)"/>
-            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#f9a8d4" transform="rotate(288)"/>
-            <circle cx="0" cy="0" r="9" fill="#fbbf24"/>
+            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#f9a8d4" transform="rotate(0)" />
+            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#f9a8d4" transform="rotate(72)" />
+            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#f9a8d4" transform="rotate(144)" />
+            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#f9a8d4" transform="rotate(216)" />
+            <ellipse cx="0" cy="-14" rx="8" ry="12" fill="#f9a8d4" transform="rotate(288)" />
+            <circle cx="0" cy="0" r="9" fill="#fbbf24" />
           </g>
         </svg>
 
         <!-- Hot pink -->
         <svg class="flower-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(30,30)">
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(0)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(60)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(120)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(180)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(240)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(300)"/>
-            <circle cx="0" cy="0" r="8" fill="#fff"/>
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(0)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(60)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(120)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(180)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(240)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#f472b6" transform="rotate(300)" />
+            <circle cx="0" cy="0" r="8" fill="#fff" />
           </g>
         </svg>
 
         <!-- Indigo -->
         <svg class="flower-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(30,30)">
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(0)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(45)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(90)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(135)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(180)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(225)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(270)"/>
-            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(315)"/>
-            <circle cx="0" cy="0" r="8" fill="#fde68a"/>
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(0)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(45)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(90)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(135)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(180)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(225)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(270)" />
+            <ellipse cx="0" cy="-14" rx="7" ry="11" fill="#818cf8" transform="rotate(315)" />
+            <circle cx="0" cy="0" r="8" fill="#fde68a" />
           </g>
         </svg>
 
@@ -479,264 +573,265 @@
   </main>
 
   <script>
-  /* ══════════════════════════════════════════════
-     Detect mobile for lighter effects
-  ══════════════════════════════════════════════ */
-  const isMobile = window.matchMedia('(max-width: 600px)').matches;
+    /* ══════════════════════════════════════════════
+       Detect mobile for lighter effects
+    ══════════════════════════════════════════════ */
+    const isMobile = window.matchMedia('(max-width: 600px)').matches;
 
-  /* ══════════════════════════════════════════════
-     1. tsParticles — star field
-  ══════════════════════════════════════════════ */
-  window.addEventListener('load', () => {
-    tsParticles.load('tsparticles', {
-      fullScreen:  { enable: false },
-      background:  { color: { value: 'transparent' } },
-      fpsLimit: isMobile ? 40 : 60,
-      particles: {
-        number:  { value: isMobile ? 110 : 210, density: { enable: true, area: 800 } },
-        color:   { value: ['#ffffff','#fde68a','#f5c842','#c084fc','#fb7185'] },
-        shape: {
-          type: ['star','circle'],
-          options: { star: { sides: { min:4, max:6 }, inset: { min:.3, max:.6 } } }
+    /* ══════════════════════════════════════════════
+       1. tsParticles — star field
+    ══════════════════════════════════════════════ */
+    window.addEventListener('load', () => {
+      tsParticles.load('tsparticles', {
+        fullScreen: { enable: false },
+        background: { color: { value: 'transparent' } },
+        fpsLimit: isMobile ? 40 : 60,
+        particles: {
+          number: { value: isMobile ? 110 : 210, density: { enable: true, area: 800 } },
+          color: { value: ['#ffffff', '#fde68a', '#f5c842', '#c084fc', '#fb7185'] },
+          shape: {
+            type: ['star', 'circle'],
+            options: { star: { sides: { min: 4, max: 6 }, inset: { min: .3, max: .6 } } }
+          },
+          opacity: {
+            value: { min: .15, max: .9 },
+            animation: { enable: true, speed: 1, minimumValue: .05, sync: false }
+          },
+          size: {
+            value: { min: .8, max: isMobile ? 2.8 : 3.5 },
+            animation: { enable: true, speed: 1.5, minimumValue: .4, sync: false }
+          },
+          move: {
+            enable: true, speed: { min: .08, max: .45 },
+            direction: 'none', random: true, straight: false,
+            outModes: { default: 'bounce' }
+          },
+          twinkle: { particles: { enable: true, frequency: .05, opacity: 1 } }
         },
-        opacity: {
-          value: { min:.15, max:.9 },
-          animation: { enable:true, speed:1, minimumValue:.05, sync:false }
+        interactivity: {
+          events: {
+            onHover: { enable: !isMobile, mode: 'bubble' },
+            onClick: { enable: true, mode: 'push' }
+          },
+          modes: {
+            bubble: { distance: 110, size: 5, duration: 2, opacity: .9 },
+            push: { quantity: isMobile ? 3 : 6 }
+          }
         },
-        size: {
-          value: { min:.8, max: isMobile ? 2.8 : 3.5 },
-          animation: { enable:true, speed:1.5, minimumValue:.4, sync:false }
-        },
-        move: {
-          enable:true, speed:{ min:.08, max:.45 },
-          direction:'none', random:true, straight:false,
-          outModes:{ default:'bounce' }
-        },
-        twinkle: { particles: { enable:true, frequency:.05, opacity:1 } }
-      },
-      interactivity: {
-        events: {
-          onHover: { enable: !isMobile, mode:'bubble' },
-          onClick:  { enable:true, mode:'push' }
-        },
-        modes: {
-          bubble: { distance:110, size:5, duration:2, opacity:.9 },
-          push:   { quantity: isMobile ? 3 : 6 }
-        }
-      },
-      detectRetina: true
+        detectRetina: true
+      });
     });
-  });
 
-  /* ══════════════════════════════════════════════
-     2. Static twinkle stars (CSS-driven)
-  ══════════════════════════════════════════════ */
-  const starCount = isMobile ? 35 : 60;
-  for (let i = 0; i < starCount; i++) {
-    const s   = document.createElement('div');
-    s.className = 't-star';
-    const sz  = 1.2 + Math.random() * 2.8;
-    s.style.cssText = `
+    /* ══════════════════════════════════════════════
+       2. Static twinkle stars (CSS-driven)
+    ══════════════════════════════════════════════ */
+    const starCount = isMobile ? 35 : 60;
+    for (let i = 0; i < starCount; i++) {
+      const s = document.createElement('div');
+      s.className = 't-star';
+      const sz = 1.2 + Math.random() * 2.8;
+      s.style.cssText = `
       width:${sz}px;height:${sz}px;
-      top:${Math.random()*100}vh;
-      left:${Math.random()*100}vw;
-      animation-duration:${1.4+Math.random()*3}s;
-      animation-delay:${Math.random()*4}s;
+      top:${Math.random() * 100}vh;
+      left:${Math.random() * 100}vw;
+      animation-duration:${1.4 + Math.random() * 3}s;
+      animation-delay:${Math.random() * 4}s;
     `;
-    document.body.appendChild(s);
-  }
+      document.body.appendChild(s);
+    }
 
-  /* ══════════════════════════════════════════════
-     3. Shooting stars (GSAP)
-  ══════════════════════════════════════════════ */
-  function launchShootingStar() {
-    const star  = document.createElement('div');
-    star.className = 'shoot';
-    document.body.appendChild(star);
+    /* ══════════════════════════════════════════════
+       3. Shooting stars (GSAP)
+    ══════════════════════════════════════════════ */
+    function launchShootingStar() {
+      const star = document.createElement('div');
+      star.className = 'shoot';
+      document.body.appendChild(star);
 
-    const sx    = Math.random() * window.innerWidth;
-    const sy    = Math.random() * window.innerHeight * .45;
-    const angle = 28 + Math.random() * 30;
-    const dist  = isMobile ? 200 + Math.random()*200 : 300 + Math.random()*420;
-    const rad   = (angle * Math.PI) / 180;
+      const sx = Math.random() * window.innerWidth;
+      const sy = Math.random() * window.innerHeight * .45;
+      const angle = 28 + Math.random() * 30;
+      const dist = isMobile ? 200 + Math.random() * 200 : 300 + Math.random() * 420;
+      const rad = (angle * Math.PI) / 180;
 
-    gsap.set(star, { x: sx, y: sy, rotation: angle });
-    gsap.to(star, {
-      x: sx + dist * Math.cos(rad),
-      y: sy + dist * Math.sin(rad),
-      opacity: 0,
-      duration: .7 + Math.random() * .7,
-      ease: 'power1.in',
-      onComplete: () => star.remove()
-    });
-  }
+      gsap.set(star, { x: sx, y: sy, rotation: angle });
+      gsap.to(star, {
+        x: sx + dist * Math.cos(rad),
+        y: sy + dist * Math.sin(rad),
+        opacity: 0,
+        duration: .7 + Math.random() * .7,
+        ease: 'power1.in',
+        onComplete: () => star.remove()
+      });
+    }
 
-  (function scheduleShoot() {
-    setTimeout(() => { launchShootingStar(); scheduleShoot(); },
-      900 + Math.random() * (isMobile ? 2800 : 2000));
-  })();
+    (function scheduleShoot() {
+      setTimeout(() => { launchShootingStar(); scheduleShoot(); },
+        900 + Math.random() * (isMobile ? 2800 : 2000));
+    })();
 
-  /* ══════════════════════════════════════════════
-     4. Floating petals (anime.js)
-  ══════════════════════════════════════════════ */
-  const petalColors = ['#fb7185','#f9a8d4','#c084fc','#f472b6','#fbbf24','#818cf8'];
+    /* ══════════════════════════════════════════════
+       4. Floating petals (anime.js)
+    ══════════════════════════════════════════════ */
+    const petalColors = ['#fb7185', '#f9a8d4', '#c084fc', '#f472b6', '#fbbf24', '#818cf8'];
 
-  function spawnPetal() {
-    const p   = document.createElement('div');
-    p.className = 'petal';
-    const sz  = 7 + Math.random() * 9;
-    p.style.cssText = `
+    function spawnPetal() {
+      const p = document.createElement('div');
+      p.className = 'petal';
+      const sz = 7 + Math.random() * 9;
+      p.style.cssText = `
       top:-28px;
-      left:${Math.random()*100}vw;
-      width:${sz}px; height:${sz*.65}px;
-      background:${petalColors[Math.floor(Math.random()*petalColors.length)]};
+      left:${Math.random() * 100}vw;
+      width:${sz}px; height:${sz * .65}px;
+      background:${petalColors[Math.floor(Math.random() * petalColors.length)]};
       opacity:.8;
     `;
-    document.body.appendChild(p);
+      document.body.appendChild(p);
 
-    anime({
-      targets: p,
-      translateY: window.innerHeight + 60,
-      translateX: [
-        { value: (Math.random()-.5)*160, duration: 3500 },
-        { value: (Math.random()-.5)*160, duration: 3500 }
-      ],
-      rotate: [0, 360 * (Math.random()>.5?1:-1) * (2+Math.random()*2)],
-      opacity: [.8, 0],
-      duration: 5500 + Math.random()*5000,
-      easing: 'linear',
-      complete: () => p.remove()
-    });
-  }
+      anime({
+        targets: p,
+        translateY: window.innerHeight + 60,
+        translateX: [
+          { value: (Math.random() - .5) * 160, duration: 3500 },
+          { value: (Math.random() - .5) * 160, duration: 3500 }
+        ],
+        rotate: [0, 360 * (Math.random() > .5 ? 1 : -1) * (2 + Math.random() * 2)],
+        opacity: [.8, 0],
+        duration: 5500 + Math.random() * 5000,
+        easing: 'linear',
+        complete: () => p.remove()
+      });
+    }
 
-  setInterval(spawnPetal, isMobile ? 600 : 380);
+    setInterval(spawnPetal, isMobile ? 600 : 380);
 
-  /* ══════════════════════════════════════════════
-     5. Rising sparkles (anime.js)
-  ══════════════════════════════════════════════ */
-  const sparkColors = ['#f5c842','#fde68a','#fb7185','#c084fc','#fff','#f472b6'];
+    /* ══════════════════════════════════════════════
+       5. Rising sparkles (anime.js)
+    ══════════════════════════════════════════════ */
+    const sparkColors = ['#f5c842', '#fde68a', '#fb7185', '#c084fc', '#fff', '#f472b6'];
 
-  function spawnSparkle() {
-    const sp  = document.createElement('div');
-    sp.className = 'sparkle';
-    const sz  = 2 + Math.random() * 3.5;
-    sp.style.cssText = `
+    function spawnSparkle() {
+      const sp = document.createElement('div');
+      sp.className = 'sparkle';
+      const sz = 2 + Math.random() * 3.5;
+      sp.style.cssText = `
       width:${sz}px;height:${sz}px;
-      bottom:${Math.random()*25}vh;
-      left:${Math.random()*100}vw;
-      background:${sparkColors[Math.floor(Math.random()*sparkColors.length)]};
+      bottom:${Math.random() * 25}vh;
+      left:${Math.random() * 100}vw;
+      background:${sparkColors[Math.floor(Math.random() * sparkColors.length)]};
     `;
-    document.body.appendChild(sp);
+      document.body.appendChild(sp);
 
-    anime({
-      targets: sp,
-      translateY: -(window.innerHeight * (.45 + Math.random()*.55)),
-      translateX: (Math.random()-.5)*90,
-      opacity: [1,0],
-      scale: [1,.1],
-      duration: 3200 + Math.random()*3800,
-      easing: 'easeOutCubic',
-      complete: () => sp.remove()
-    });
-  }
+      anime({
+        targets: sp,
+        translateY: -(window.innerHeight * (.45 + Math.random() * .55)),
+        translateX: (Math.random() - .5) * 90,
+        opacity: [1, 0],
+        scale: [1, .1],
+        duration: 3200 + Math.random() * 3800,
+        easing: 'easeOutCubic',
+        complete: () => sp.remove()
+      });
+    }
 
-  setInterval(spawnSparkle, isMobile ? 350 : 230);
+    setInterval(spawnSparkle, isMobile ? 350 : 230);
 
-  /* ══════════════════════════════════════════════
-     6. GSAP entrance timeline
-  ══════════════════════════════════════════════ */
-  window.addEventListener('load', () => {
-    const tl = gsap.timeline({ delay: .4 });
+    /* ══════════════════════════════════════════════
+       6. GSAP entrance timeline
+    ══════════════════════════════════════════════ */
+    window.addEventListener('load', () => {
+      const tl = gsap.timeline({ delay: .4 });
 
-    tl.from('#crownWrap', {
+      tl.from('#crownWrap', {
         y: -70, opacity: 0, scale: .4,
         duration: 1.3, ease: 'elastic.out(1,.65)'
       })
-      .to('#mainCard', {
-        opacity: 1, y: 0,
-        duration: .9, ease: 'power3.out'
-      }, '-=.5')
-      .from('#cardTitle', {
-        y: 24, opacity: 0,
-        duration: .8, ease: 'power2.out'
-      }, '-=.6')
-      .from('#divider', {
-        scaleX: 0, opacity: 0,
-        duration: .65, ease: 'power2.out',
-        transformOrigin: 'center center'
-      }, '-=.45')
-      .from('#cardMsg', {
-        y: 18, opacity: 0,
-        duration: .9, ease: 'power2.out'
-      }, '-=.35')
-      .from('#flowersRow .flower-svg', {
-        scale: 0, opacity: 0,
-        duration: .48, ease: 'back.out(2.2)',
-        stagger: .11
-      }, '-=.4')
-      .to('#signature', {
-        opacity: 1, duration: 1.1, ease: 'power2.out'
-      }, '-=.2');
-  });
-
-  /* ══════════════════════════════════════════════
-     7. Hair ribbon draw (anime.js)
-  ══════════════════════════════════════════════ */
-  window.addEventListener('load', () => {
-    anime({
-      targets: '#hp1, #hp2, #hp3',
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: 'easeInOutSine',
-      duration: 2000,
-      delay: anime.stagger(280),
-      loop: false
+        .to('#mainCard', {
+          opacity: 1, y: 0,
+          duration: .9, ease: 'power3.out'
+        }, '-=.5')
+        .from('#cardTitle', {
+          y: 24, opacity: 0,
+          duration: .8, ease: 'power2.out'
+        }, '-=.6')
+        .from('#divider', {
+          scaleX: 0, opacity: 0,
+          duration: .65, ease: 'power2.out',
+          transformOrigin: 'center center'
+        }, '-=.45')
+        .from('#cardMsg', {
+          y: 18, opacity: 0,
+          duration: .9, ease: 'power2.out'
+        }, '-=.35')
+        .from('#flowersRow .flower-svg', {
+          scale: 0, opacity: 0,
+          duration: .48, ease: 'back.out(2.2)',
+          stagger: .11
+        }, '-=.4')
+        .to('#signature', {
+          opacity: 1, duration: 1.1, ease: 'power2.out'
+        }, '-=.2');
     });
-  });
 
-  /* ══════════════════════════════════════════════
-     8. Title wave animation (anime.js)
-  ══════════════════════════════════════════════ */
-  window.addEventListener('load', () => {
-    const titleEl = document.getElementById('cardTitle');
-    const chars   = titleEl.textContent.split('');
-    titleEl.innerHTML = chars.map(c =>
-      c === ' ' ? ' ' : `<span style="display:inline-block">${c}</span>`
-    ).join('');
-
-    anime({
-      targets: '#cardTitle span',
-      translateY: [-4, 4],
-      duration: 1900,
-      delay: anime.stagger(75, { from:'center' }),
-      direction: 'alternate',
-      loop: true,
-      easing: 'easeInOutSine'
-    });
-  });
-
-  /* ══════════════════════════════════════════════
-     9. Mouse / touch parallax on card (desktop only)
-  ══════════════════════════════════════════════ */
-  if (!isMobile) {
-    document.addEventListener('mousemove', e => {
-      const cx = window.innerWidth  / 2;
-      const cy = window.innerHeight / 2;
-      const dx = (e.clientX - cx) / cx;
-      const dy = (e.clientY - cy) / cy;
-
-      gsap.to('#mainCard', {
-        rotationY: dx * 5,
-        rotationX: -dy * 3.5,
-        duration: .85,
-        ease: 'power2.out',
-        transformPerspective: 1000
-      });
-      gsap.to('#crownWrap', {
-        x: dx * 12, y: dy * 7,
-        duration: .85, ease: 'power2.out'
+    /* ══════════════════════════════════════════════
+       7. Hair ribbon draw (anime.js)
+    ══════════════════════════════════════════════ */
+    window.addEventListener('load', () => {
+      anime({
+        targets: '#hp1, #hp2, #hp3',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 2000,
+        delay: anime.stagger(280),
+        loop: false
       });
     });
-  }
+
+    /* ══════════════════════════════════════════════
+       8. Title wave animation (anime.js)
+    ══════════════════════════════════════════════ */
+    window.addEventListener('load', () => {
+      const titleEl = document.getElementById('cardTitle');
+      const chars = titleEl.textContent.split('');
+      titleEl.innerHTML = chars.map(c =>
+        c === ' ' ? ' ' : `<span style="display:inline-block">${c}</span>`
+      ).join('');
+
+      anime({
+        targets: '#cardTitle span',
+        translateY: [-4, 4],
+        duration: 1900,
+        delay: anime.stagger(75, { from: 'center' }),
+        direction: 'alternate',
+        loop: true,
+        easing: 'easeInOutSine'
+      });
+    });
+
+    /* ══════════════════════════════════════════════
+       9. Mouse / touch parallax on card (desktop only)
+    ══════════════════════════════════════════════ */
+    if (!isMobile) {
+      document.addEventListener('mousemove', e => {
+        const cx = window.innerWidth / 2;
+        const cy = window.innerHeight / 2;
+        const dx = (e.clientX - cx) / cx;
+        const dy = (e.clientY - cy) / cy;
+
+        gsap.to('#mainCard', {
+          rotationY: dx * 5,
+          rotationX: -dy * 3.5,
+          duration: .85,
+          ease: 'power2.out',
+          transformPerspective: 1000
+        });
+        gsap.to('#crownWrap', {
+          x: dx * 12, y: dy * 7,
+          duration: .85, ease: 'power2.out'
+        });
+      });
+    }
   </script>
 </body>
+
 </html>
